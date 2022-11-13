@@ -1,0 +1,96 @@
+
+
+
+<div class="cls-content-page">
+
+  <h3>Registro Vehículos</h3>
+
+    <div>
+        <mat-form-field class="example-form-field" appearance="outline">
+            <mat-label>Buscar</mat-label>
+            <input matInput type="text" [(ngModel)]="value" />
+            <button
+              *ngIf="value"
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              (click)="value = ''"
+            >
+            <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    </div>
+    
+    <div>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <!--- Note that these columns can be defined in any order.
+                    The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Position Column -->
+            <ng-container matColumnDef="tipo">
+              <th mat-header-cell *matHeaderCellDef>Tipo.</th>
+              <td mat-cell *matCellDef="let element">{{ element.tipo}}</td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="marca">
+              <th mat-header-cell *matHeaderCellDef>Marca</th>
+              <td mat-cell *matCellDef="let element">{{ element.marca }}</td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="modelo">
+              <th mat-header-cell *matHeaderCellDef>Modelo</th>
+              <td mat-cell *matCellDef="let element">{{ element.modelo }}</td>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="cilindraje">
+              <th mat-header-cell *matHeaderCellDef>Cilindraje</th>
+              <td mat-cell *matCellDef="let element">{{ element.cilindraje }}</td>
+            </ng-container>
+
+
+             <!-- Symbol Column -->
+             <ng-container matColumnDef="capacidadPasajeros">
+              <th mat-header-cell *matHeaderCellDef>Capacidad Pasajeros</th>
+              <td mat-cell *matCellDef="let element">{{ element.capacidadPasajeros }}</td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="kilometraje">
+              <th mat-header-cell *matHeaderCellDef>Kilometraje</th>
+              <td mat-cell *matCellDef="let element">{{ element.kilometraje }}</td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="placa">
+              <th mat-header-cell *matHeaderCellDef>Placa</th>
+              <td mat-cell *matCellDef="let element">{{ element.placa }}</td>
+            </ng-container>
+
+            !-- Symbol Column -->
+            <ng-container matColumnDef="fechaUltimaRevision">
+              <th mat-header-cell *matHeaderCellDef>Fecha Última Revision</th>
+              <td mat-cell *matCellDef="let element">{{ element.fechaUltimaRevision }}</td>
+            </ng-container>
+
+            !-- Symbol Column -->
+            <ng-container matColumnDef="detalles">
+              <th mat-header-cell *matHeaderCellDef>Detalles</th>
+              <td mat-cell *matCellDef="let element">{{ element.detalles }}</td>
+            </ng-container>
+
+            !-- Symbol Column -->
+            <ng-container matColumnDef="color">
+              <th mat-header-cell *matHeaderCellDef>Color</th>
+              <td mat-cell *matCellDef="let element">{{ element.color }}</td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+          </table>
+          
+    </div>
+    
+    </div>
